@@ -5,6 +5,7 @@
 //   * HttpRequestDispatcher.DispatchRequest no longer creates a WWW; it calls MonsuOffline.Embedded.Dispatch,
 //     which answers one frame later through a small callback class (MonsuOffline.Callback) that parses the
 //     text with the game's own JSONObject.Parse and hands it to the original response handler
+//   * VkSdk.Initialize first calls MonsuOffline.Embedded.Init (error log to monsu_log.txt + on-screen overlay)
 //   * NetworkHealthSensor.DoHealthCheck reports "connected" immediately instead of requesting "<server>/up"
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,12 @@ static class Embed
         var embedded = cloner.Map(lib.GetType("MonsuOffline.Embedded"));
         var dispatch = embedded.Methods.First(m => m.Name == "Dispatch");
         var actionString = dispatch.Parameters[1].ParameterType;              // Action<string> (target-imported)
+
+        // diagnostics: VkSdk.Initialize runs first thing in the splash scene; start the on-screen/file log there
+        var init = embedded.Methods.First(m => m.Name == "Init");
+        var vkInit = target.GetType("VkSdk").Methods.First(m => m.Name == "Initialize");
+        var ilp = vkInit.Body.GetILProcessor();
+        ilp.InsertBefore(vkInit.Body.Instructions[0], ilp.Create(OpCodes.Call, init));
 
         PatchDispatcher(target, dispatch, actionString);
         PatchHealthSensor(target);
