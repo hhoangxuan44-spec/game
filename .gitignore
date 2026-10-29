@@ -1,0 +1,9 @@
+out/
+*.keystore
+*.jks
+build/work/
+server/logs/
+server/data/save.json
+*.apk
+!original/kapai.apk
+__pycache__/
