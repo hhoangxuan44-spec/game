@@ -9,6 +9,27 @@ static class MonoReplay
 {
     static int Main(string[] args)
     {
+        // force-load every type of the merged server (this is what failed on the device: missing .override entries)
+        int loaded = 0;
+        foreach (Type t in typeof(Game).Assembly.GetTypes())
+        {
+            if (t.Namespace != "MonsuOffline" && !(t.DeclaringType != null && t.DeclaringType.Namespace == "MonsuOffline")) continue;
+            System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(t.TypeHandle);
+            foreach (var m in t.GetMethods(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.DeclaredOnly)) { }
+            loaded++;
+        }
+        Console.Error.WriteLine("loaded " + loaded + " types");
+        // JIT-compile every patched / added method: catches invalid IL and unresolvable references
+        string[] jit = { "HttpRequestDispatcher.DispatchRequest", "MonsuOffline.Callback.Invoke", "MonsuOffline.Embedded.Dispatch",
+                         "MonsuOffline.Embedded.Init", "MonsuOffline.Embedded.Trace", "MonsuOffline.DebugOverlay.OnGUI", "NetworkHealthSensor.DoHealthCheck",
+                         "VkSdk.Initialize", "VkSdk.InitSDK", "VkSdk.Login", "VkSdk.Pay" };
+        foreach (string name in jit)
+        {
+            int dot = name.LastIndexOf('.');
+            Type t = typeof(Game).Assembly.GetType(name.Substring(0, dot));
+            foreach (var m in t.GetMethods(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.DeclaredOnly))
+                if (m.Name == name.Substring(dot + 1)) { System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(m.MethodHandle); Console.Error.WriteLine("jit ok " + name); }
+        }
         List<object> steps = (List<object>)Json.Parse(File.ReadAllText(args[0]));
         Game g = new Game(args.Length > 1 ? args[1] : null);
         foreach (object o in steps)

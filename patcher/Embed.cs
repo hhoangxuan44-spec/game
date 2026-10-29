@@ -135,6 +135,10 @@ class Cloner
         foreach (var t in src.Types.Where(t => t.Name != "<Module>")) Declare(t, null);
         foreach (var kv in types.ToList()) Fill(kv.Key, kv.Value);
         foreach (var kv in methods.ToList()) Body(kv.Key, kv.Value);
+        // explicit interface implementations (.override), e.g. the compiler-generated iterator's IEnumerator.Reset;
+        // without them the runtime refuses to load the type (TypeLoadException)
+        foreach (var kv in methods.ToList())
+            foreach (var o in kv.Key.Overrides) kv.Value.Overrides.Add(ImpMethod(o));
     }
 
     void Declare(TypeDefinition s, TypeDefinition parent)

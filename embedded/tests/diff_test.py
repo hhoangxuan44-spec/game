@@ -163,6 +163,9 @@ def main():
         if mono.returncode != 0:
             print(mono.stdout, mono.stderr)
             return 2
+        for l in mono.stderr.splitlines():
+            if l.startswith(("jit ok", "loaded")):
+                print(" ", l)
         ml = [l for l in mono.stdout.splitlines() if l.strip().startswith(("{", "UNHANDLED"))]
         rc = compare("mono(merged dll)", py, ml)
         if rc:
