@@ -20,6 +20,31 @@ def edit(path, old, new, marker):
     open(path, "w", encoding="utf-8").write(s.replace(old, new, 1))
 
 
+def scale_panel(path, factor):
+    """Enlarge the cheat panel (sizes, offsets, paddings, animation, text-icon fonts) by `factor`. Idempotent."""
+    import re
+    s = open(path, encoding="utf-8-sig").read()
+    if "MOD_UI_SCALE" in s:
+        return
+
+    def num(tok):
+        try:
+            v = float(tok)
+        except ValueError:
+            return tok
+        return str(int(round(v * factor)))
+
+    def scale_attr(m):
+        name, val = m.group(1), m.group(2)
+        return '%s="%s"' % (name, ",".join(num(t.strip()) for t in val.split(",")))
+
+    s = re.sub(r'\b(Size|Offset|Begin|End|StackPadding|Padding|TextOffset)="([^"]*)"', scale_attr, s)
+    # icons written as text markup ([ICON_...]) grow with the font, not with Size
+    s = s.replace('Style="FontNormal16"', 'Style="FontNormal24"').replace('FontSize="14"', 'FontSize="21"')
+    s = s.replace("<Context ", "<!-- MOD_UI_SCALE %s -->\n<Context " % factor, 1)
+    open(path, "w", encoding="utf-8").write(s)
+
+
 def main(mod):
     for name in ("Cheat_Spawn_Unit_Popup.xml", "Cheat_Spawn_Unit_Popup.lua"):
         shutil.copy(os.path.join(PATCH, name), os.path.join(mod, "UI", "Popups", name))
@@ -35,13 +60,16 @@ def main(mod):
 
     # 2. panel: one more row with a "spawn unit" button, taller panel
     xml = os.path.join(mod, "UI", "Panels", "Cheat_Menu_Panel.xml")
-    edit(xml, 'Size="445,185" ID="SpawnDlgContainer"', 'Size="445,235" ID="SpawnDlgContainer"', 'Size="445,235"')
-    edit(xml, 'Begin="0,185"', 'Begin="0,235"', 'Begin="0,235"')
-    edit(xml, 'ID="Top" Size="445,185"', 'ID="Top" Size="445,235"', 'ID="Top" Size="445,235"')
-    row = ('\t\t\t\t<Grid ID="BonusBacking4" Anchor="C,T" Offset="0,0" Size="405,46" Texture="Controls_SubContainer2" SliceCorner="17,17" SliceSize="1,1" SliceTextureSize="36,35" Color="GovBonusDark">\n'
-           '\t\t\t\t\t<GridButton ID="CheatButtonSpawn" Anchor="C,C" Size="200,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>\n'
-           '\t\t\t\t</Grid>\n')
-    edit(xml, "\t\t\t</Stack>\n\t\t</SlideAnim>", row + "\t\t\t</Stack>\n\t\t</SlideAnim>", "BonusBacking4")
+    if "MOD_UI_SCALE" not in open(xml, encoding="utf-8-sig").read():
+        edit(xml, 'Size="445,185" ID="SpawnDlgContainer"', 'Size="445,235" ID="SpawnDlgContainer"', 'Size="445,235"')
+        edit(xml, 'Begin="0,185"', 'Begin="0,235"', 'Begin="0,235"')
+        edit(xml, 'ID="Top" Size="445,185"', 'ID="Top" Size="445,235"', 'ID="Top" Size="445,235"')
+        row = ('\t\t\t\t<Grid ID="BonusBacking4" Anchor="C,T" Offset="0,0" Size="405,46" Texture="Controls_SubContainer2" SliceCorner="17,17" SliceSize="1,1" SliceTextureSize="36,35" Color="GovBonusDark">\n'
+               '\t\t\t\t\t<GridButton ID="CheatButtonSpawn" Anchor="C,C" Size="200,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>\n'
+               '\t\t\t\t</Grid>\n')
+        edit(xml, "\t\t\t</Stack>\n\t\t</SlideAnim>", row + "\t\t\t</Stack>\n\t\t</SlideAnim>", "BonusBacking4")
+
+    scale_panel(xml, float(os.environ.get("PANEL_SCALE", "1.5")))
 
     lua = os.path.join(mod, "UI", "Panels", "Cheat_Menu_Panel_Functions.lua")
     # nothing to add there; the button is wired in Cheat_Menu_Panel.lua
