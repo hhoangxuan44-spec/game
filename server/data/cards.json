@@ -1,0 +1,632 @@
+[
+ {
+  "id": "1",
+  "prefab": "beTheFever",
+  "type": "Common",
+  "index": 5,
+  "illustration": "card_illustration_bee_head_start",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "2",
+  "prefab": "headStartBat",
+  "type": "Rare",
+  "index": 7,
+  "illustration": "card_illustration_bat_head_start",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "6",
+  "prefab": "air_dash",
+  "type": "Epic",
+  "index": 23,
+  "illustration": "card_illustration_air_dash",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "3",
+  "prefab": "feverBee",
+  "type": "Common",
+  "index": 6,
+  "illustration": "card_illustration_bee_extend",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "4",
+  "prefab": "extendBat",
+  "type": "Rare",
+  "index": 8,
+  "illustration": "card_illustration_bat_extend",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "7",
+  "prefab": "bubbleBob",
+  "type": "Epic",
+  "index": 32,
+  "illustration": "card_illustration_bubble_bob",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "5",
+  "prefab": "headStartExtendDragon",
+  "type": "Epic",
+  "index": 9,
+  "illustration": "card_illustration_dragon_red",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "8",
+  "prefab": "gliderBooster1",
+  "type": "Common",
+  "index": 19,
+  "illustration": "card_illustration_glide_1",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "9",
+  "prefab": "gliderBooster2",
+  "type": "Rare",
+  "index": 20,
+  "illustration": "card_illustration_glide_2",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "10",
+  "prefab": "gliderBooster3",
+  "type": "Epic",
+  "index": 21,
+  "illustration": "card_illustration_glide_3",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "11",
+  "prefab": "hummingBirdsBooster",
+  "type": "Epic",
+  "index": 13,
+  "illustration": "card_illustration_humming_birds",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "12",
+  "prefab": "BFGBooster",
+  "type": "Rare",
+  "index": 29,
+  "illustration": "card_illustration_bfg_pinky",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "13",
+  "prefab": "bunny",
+  "type": "Rare",
+  "index": 34,
+  "illustration": "card_illustration_bunny",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "14",
+  "prefab": "dino",
+  "type": "Rare",
+  "index": 36,
+  "illustration": "card_illustration_dino",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "15",
+  "prefab": "donkeyBooster",
+  "type": "Rare",
+  "index": 30,
+  "illustration": "card_illustration_dk",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "16",
+  "prefab": "hotDog",
+  "type": "Rare",
+  "index": 33,
+  "illustration": "card_illustration_hot_dog",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "17",
+  "prefab": "fire_ball_protector",
+  "type": "Common",
+  "index": 14,
+  "illustration": "card_illustration_fireball_protector",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "18",
+  "prefab": "fat_chicken",
+  "type": "Rare",
+  "index": 1,
+  "illustration": "card_illustration_fat_chicken",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "28",
+  "prefab": "hammerGoblin",
+  "type": "Epic",
+  "index": 31,
+  "illustration": "card_illustration_goblin",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "20",
+  "prefab": "diamond_silver",
+  "type": "Rare",
+  "index": 17,
+  "illustration": "card_illustration_diamond_multiplier_1",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "21",
+  "prefab": "diamond_gold",
+  "type": "Epic",
+  "index": 18,
+  "illustration": "card_illustration_diamond_multiplier_2",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "22",
+  "prefab": "llama",
+  "type": "Rare",
+  "index": 37,
+  "illustration": "card_illustration_llama",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "23",
+  "prefab": "midas",
+  "type": "Rare",
+  "index": 15,
+  "illustration": "card_illustration_midas",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "24",
+  "prefab": "powerup_increaser",
+  "type": "Epic",
+  "index": 26,
+  "illustration": "card_illustration_powerup_increaser",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "25",
+  "prefab": "spear_attack",
+  "type": "Rare",
+  "index": 25,
+  "illustration": "card_illustration_spear_attack",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "26",
+  "prefab": "tornado",
+  "type": "Rare",
+  "index": 22,
+  "illustration": "card_illustration_tornado",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "27",
+  "prefab": "wall_bubble",
+  "type": "Epic",
+  "index": 24,
+  "illustration": "card_illustration_wall_bubble",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "19",
+  "prefab": "diamond_bronze",
+  "type": "Common",
+  "index": 16,
+  "illustration": "card_illustration_diamond_multiplier_3",
+  "slot": "Item",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "29",
+  "prefab": "powerupEngineer1",
+  "type": "Common",
+  "index": 27,
+  "illustration": "card_illustration_more_powerups_1",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "30",
+  "prefab": "powerupEngineer2",
+  "type": "Epic",
+  "index": 28,
+  "illustration": "card_illustration_more_powerups_2",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "31",
+  "prefab": "powerBug",
+  "type": "Rare",
+  "index": 3,
+  "illustration": "card_illustration_power_bug",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "32",
+  "prefab": "diamondFly",
+  "type": "Epic",
+  "index": 4,
+  "illustration": "card_illustration_diamond_b_fly",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "33",
+  "prefab": "pitHawk",
+  "type": "Common",
+  "index": 10,
+  "illustration": "card_illustration_pit_hawk",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "34",
+  "prefab": "pitHawk2",
+  "type": "Rare",
+  "index": 11,
+  "illustration": "card_illustration_double_pit_hawk",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "35",
+  "prefab": "pitFalcon",
+  "type": "Epic",
+  "index": 12,
+  "illustration": "card_illustration_pit_falcon",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "36",
+  "prefab": "blastHornet",
+  "type": "Epic",
+  "index": 0,
+  "illustration": "card_illustration_blast_hornet",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "37",
+  "prefab": "lady_bug",
+  "type": "Common",
+  "index": 2,
+  "illustration": "card_illustration_lady_bug",
+  "slot": "Flying",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "c"
+ },
+ {
+  "id": "38",
+  "prefab": "uselessDuck",
+  "type": "Useless",
+  "index": 39,
+  "illustration": "card_illustration_useless_duck",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "u"
+ },
+ {
+  "id": "39",
+  "prefab": "yeti",
+  "type": "Rare",
+  "index": 35,
+  "illustration": "card_illustration_yeti",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "r"
+ },
+ {
+  "id": "40",
+  "prefab": "mammoth",
+  "type": "Epic",
+  "index": 38,
+  "illustration": "card_illustration_mammoth",
+  "slot": "Walking",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "e"
+ },
+ {
+  "id": "1001",
+  "prefab": "jugg",
+  "type": "Jugg",
+  "index": 1001,
+  "illustration": "card_illustration_jugg",
+  "slot": "Appear",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "j"
+ },
+ {
+  "id": "1002",
+  "prefab": "sf",
+  "type": "Hero",
+  "index": 1002,
+  "illustration": "card_illustration_sf",
+  "slot": "Appear",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "h"
+ },
+ {
+  "id": "1003",
+  "prefab": "panda",
+  "type": "Hero",
+  "index": 1003,
+  "illustration": "card_illustration_panda",
+  "slot": "Appear",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "h"
+ },
+ {
+  "id": "1004",
+  "prefab": "tiny",
+  "type": "Hero",
+  "index": 1004,
+  "illustration": "card_illustration_tiny",
+  "slot": "Appear",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "h"
+ },
+ {
+  "id": "1005",
+  "prefab": "windranger",
+  "type": "Hero",
+  "index": 1005,
+  "illustration": "card_illustration_windranger",
+  "slot": "Appear",
+  "kind": "CardDefinition",
+  "requires": null,
+  "t": "h"
+ },
+ {
+  "id": "41",
+  "prefab": "rhoomba",
+  "type": "Legendary",
+  "index": 42,
+  "illustration": "card_illustration_rhoomba",
+  "slot": "Walking",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "5",
+   "17",
+   "14"
+  ],
+  "t": "l"
+ },
+ {
+  "id": "42",
+  "prefab": "rocket_booster",
+  "type": "Legendary",
+  "index": 41,
+  "illustration": "card_illustration_rocket",
+  "slot": "Item",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "22",
+   "6",
+   "35"
+  ],
+  "t": "l"
+ },
+ {
+  "id": "43",
+  "prefab": "puff",
+  "type": "Legendary",
+  "index": 40,
+  "illustration": "card_illustration_puff",
+  "slot": "Flying",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "25",
+   "34",
+   "30"
+  ],
+  "t": "l"
+ },
+ {
+  "id": "45",
+  "prefab": "knight",
+  "type": "Legendary",
+  "index": 45,
+  "illustration": "card_illustration_mad_knight",
+  "slot": "Walking",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "16",
+   "26",
+   "29"
+  ],
+  "t": "l"
+ },
+ {
+  "id": "46",
+  "prefab": "icy_freeze",
+  "type": "Legendary",
+  "index": 44,
+  "illustration": "card_illustration_ice_tube",
+  "slot": "Item",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "39",
+   "24",
+   "11"
+  ],
+  "t": "l"
+ },
+ {
+  "id": "47",
+  "prefab": "needleTail",
+  "type": "Legendary",
+  "index": 46,
+  "illustration": "card_illustration_piff",
+  "slot": "Flying",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "34",
+   "36",
+   "10"
+  ],
+  "t": "l"
+ },
+ {
+  "id": "44",
+  "prefab": "monfire",
+  "type": "Ultimate",
+  "index": 43,
+  "illustration": "card_illustration_monfire",
+  "slot": "Item",
+  "kind": "EvolvableCardDefinition",
+  "requires": [
+   "41",
+   "42",
+   "43"
+  ],
+  "t": "t"
+ },
+ {
+  "id": "49",
+  "prefab": "fire_jugg",
+  "type": "FireHero",
+  "index": 47,
+  "illustration": "card_illustration_fire_jugg",
+  "slot": "Item",
+  "kind": "FireHeroCardDefinition",
+  "requires": [
+   "17",
+   "44",
+   "27"
+  ],
+  "t": "x"
+ },
+ {
+  "id": "50",
+  "prefab": "fire_tiny",
+  "type": "FireHero",
+  "index": 48,
+  "illustration": "card_illustration_fire_tiny",
+  "slot": "Item",
+  "kind": "FireHeroCardDefinition",
+  "requires": [
+   "11",
+   "44",
+   "18"
+  ],
+  "t": "x"
+ }
+]

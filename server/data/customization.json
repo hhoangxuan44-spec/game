@@ -1,0 +1,730 @@
+[
+ {
+  "name": "hat_sleepy",
+  "hero": "ogre",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hat_knight",
+  "hero": "ogre",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hat_horns",
+  "hero": "ogre",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hat_business_hair",
+  "hero": "ogre",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hat_teddy",
+  "hero": "ogre",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hat_tiara",
+  "hero": "ogre",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hand_teddy_bear",
+  "hero": "ogre",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hand_knight",
+  "hero": "ogre",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hand_orc",
+  "hero": "ogre",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hand_briefcase",
+  "hero": "ogre",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hand_teddy",
+  "hero": "ogre",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hand_magic_wand",
+  "hero": "ogre",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "chest_pyjama",
+  "hero": "ogre",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "chest_armor",
+  "hero": "ogre",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "chest_orc",
+  "hero": "ogre",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "chest_teddy",
+  "hero": "ogre",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "chest_business_suit",
+  "hero": "ogre",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "chest_dress",
+  "hero": "ogre",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "feet_bunny_slippers",
+  "hero": "ogre",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "feet_knight",
+  "hero": "ogre",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "feet_orc",
+  "hero": "ogre",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "feet_business_shoes",
+  "hero": "ogre",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "feet_teddy",
+  "hero": "ogre",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "feet_high_heels",
+  "hero": "ogre",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_foot_alligator_shoe",
+  "hero": "jugg",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_foot_bee_shoe",
+  "hero": "jugg",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_foot_chef_shoe",
+  "hero": "jugg",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_foot_girl_shoe",
+  "hero": "jugg",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_foot_knight_shoe",
+  "hero": "jugg",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_foot_wrestler_shoe",
+  "hero": "jugg",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hand_alligator",
+  "hero": "jugg",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hand_bee",
+  "hero": "jugg",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hand_chef",
+  "hero": "jugg",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hand_girl",
+  "hero": "jugg",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hand_knight",
+  "hero": "jugg",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hand_wrestler",
+  "hero": "jugg",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hat_alligator",
+  "hero": "jugg",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hat_bee",
+  "hero": "jugg",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hat_chef",
+  "hero": "jugg",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hat_girl",
+  "hero": "jugg",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hat_knight",
+  "hero": "jugg",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_hat_wrestler",
+  "hero": "jugg",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_chest_bee",
+  "hero": "jugg",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_chest_alligator",
+  "hero": "jugg",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_chest_chef",
+  "hero": "jugg",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_chest_girl",
+  "hero": "jugg",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_chest_knight",
+  "hero": "jugg",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_jugg_chest_wrestler",
+  "hero": "jugg",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_chest_death",
+  "hero": "sf",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_chest_king",
+  "hero": "sf",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_chest_taurus",
+  "hero": "sf",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_chest_zombie",
+  "hero": "sf",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_chest_rhinoceros",
+  "hero": "sf",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_chest_faraon",
+  "hero": "sf",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hand_death",
+  "hero": "sf",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hand_king",
+  "hero": "sf",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hand_taurus",
+  "hero": "sf",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hand_zombie",
+  "hero": "sf",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hand_rhinoceros",
+  "hero": "sf",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hand_faraon",
+  "hero": "sf",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_foot_death",
+  "hero": "sf",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_foot_king",
+  "hero": "sf",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_foot_taurus",
+  "hero": "sf",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_foot_zombie",
+  "hero": "sf",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_foot_rhinoceros",
+  "hero": "sf",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_foot_faraon",
+  "hero": "sf",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hat_death",
+  "hero": "sf",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hat_king",
+  "hero": "sf",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hat_taurus",
+  "hero": "sf",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hat_zombie",
+  "hero": "sf",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hat_rhinoceros",
+  "hero": "sf",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_sf_hat_faraon",
+  "hero": "sf",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_chest_clown",
+  "hero": "panda",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_chest_doraemon",
+  "hero": "panda",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_chest_pirate",
+  "hero": "panda",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_chest_sushi",
+  "hero": "panda",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_chest_wapiti",
+  "hero": "panda",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_chest_rogue",
+  "hero": "panda",
+  "category": "body",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hand_clown",
+  "hero": "panda",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hand_doraemon",
+  "hero": "panda",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hand_pirate",
+  "hero": "panda",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hand_sushi",
+  "hero": "panda",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hand_wapiti",
+  "hero": "panda",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hand_rogue",
+  "hero": "panda",
+  "category": "arms",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_foot_clown",
+  "hero": "panda",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_foot_doraemon",
+  "hero": "panda",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_foot_pirate",
+  "hero": "panda",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_foot_sushi",
+  "hero": "panda",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_foot_wapiti",
+  "hero": "panda",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_foot_rogue",
+  "hero": "panda",
+  "category": "feet",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hat_clown",
+  "hero": "panda",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hat_doraemon",
+  "hero": "panda",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hat_pirate",
+  "hero": "panda",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hat_sushi",
+  "hero": "panda",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hat_wapiti",
+  "hero": "panda",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_panda_hat_rogue",
+  "hero": "panda",
+  "category": "head",
+  "currency": "COINS",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_chest_savage",
+  "hero": "tiny",
+  "category": "body",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_chest_oneal",
+  "hero": "tiny",
+  "category": "body",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_foot_savage_shoe",
+  "hero": "tiny",
+  "category": "feet",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_foot_oneal_shoe",
+  "hero": "tiny",
+  "category": "feet",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_hand_savage",
+  "hero": "tiny",
+  "category": "arms",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_hand_oneal",
+  "hero": "tiny",
+  "category": "arms",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_hat_savage",
+  "hero": "tiny",
+  "category": "head",
+  "currency": "HONOR",
+  "price": 10
+ },
+ {
+  "name": "hero_tiny_hat_oneal",
+  "hero": "tiny",
+  "category": "head",
+  "currency": "HONOR",
+  "price": 10
+ }
+]

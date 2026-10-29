@@ -7,3 +7,6 @@ server/data/save.json
 *.apk
 __pycache__/
 original/*.apk
+patcher/bin/
+patcher/obj/
+build/debug.keystore
