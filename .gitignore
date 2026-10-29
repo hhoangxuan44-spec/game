@@ -14,3 +14,6 @@ embedded/bin/
 embedded/obj/
 embedded/tests/bin/
 embedded/tests/obj/
+civ6/work/
+civ6/out/
+civ6/debug.keystore
