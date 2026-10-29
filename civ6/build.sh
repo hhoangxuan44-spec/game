@@ -16,6 +16,8 @@ java -jar "$APKTOOL" d -f -o "$WORK/ap" "$APK" >/dev/null
 # 1. bundle the mod (ASCII folder name; the game does not care about it)
 mkdir -p "$WORK/ap/assets/mods"
 cp -r "$MOD" "$WORK/ap/assets/mods/AdvancedCheatMenu"
+# add the "spawn any unit" popup (patch_mod.py edits the copy, never the original folder)
+python3 "$HERE/patch_mod.py" "$WORK/ap/assets/mods/AdvancedCheatMenu"
 # the mod's file list says UI/POPUPS/, the real folder is UI/Popups/ -- matters on a case-sensitive filesystem
 sed -i 's|UI/POPUPS/|UI/Popups/|g' "$WORK/ap/assets/mods/AdvancedCheatMenu/"*.modinfo
 

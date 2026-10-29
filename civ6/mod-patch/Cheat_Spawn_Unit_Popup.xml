@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+	<Box ID="SpawnPanel" Size="parent,parent" ConsumeMouse="1" Color="0,0,0,150">
+		<Image ID="PopupBackgroundImage" Anchor="C,C" Size="auto,auto" AutoSizePadding="-10,-10" Texture="Parchment_Pattern" StretchMode="Tile" ConsumeMouse="1">
+			<Grid Size="360,40" Texture="Controls_SubHeader2" ConsumeMouse="1" SliceCorner="20,2" SliceTextureSize="40,40">
+				<Label ID="PanelHeader" Anchor="C,C" Style="FontFlair24" FontStyle="glow" ColorSet="ShellHeader"/>
+			</Grid>
+			<Grid ID="SpawnWindow" Anchor="C,C" Size="400,auto" AutoSizePadding="0,10" Style="ScreenFrame">
+				<Button ID="ModalScreenClose" Texture="Controls_CloseLarge" Size="44,44" Anchor="R,T" Offset="2,5"/>
+				<Stack ID="PopupStack" Size="360,auto" Anchor="C,T" Offset="0,60" StackGrowth="Bottom" StackPadding="6">
+					<Stack ID="TabStack" Anchor="C,T" StackGrowth="Right" StackPadding="4">
+						<GridButton ID="TabAll" Size="68,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>
+						<GridButton ID="TabLand" Size="68,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>
+						<GridButton ID="TabSea" Size="68,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>
+						<GridButton ID="TabAir" Size="68,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>
+						<GridButton ID="TabOther" Size="68,34" Style="TabButton" FontSize="14" TextOffset="0,2"/>
+					</Stack>
+					<GridButton ID="Unit1" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit2" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit3" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit4" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit5" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit6" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit7" Size="350,36" Style="MainButton" Hidden="1"/>
+					<GridButton ID="Unit8" Size="350,36" Style="MainButton" Hidden="1"/>
+					<Stack ID="PageStack" Anchor="C,T" StackGrowth="Right" StackPadding="10">
+						<GridButton ID="PrevPage" Size="70,34" Style="MainButton"/>
+						<Label ID="PageLabel" Anchor="C,C" Style="FontNormal18" ColorSet="White_Black" Size="80,34" TextAnchor="C,C"/>
+						<GridButton ID="NextPage" Size="70,34" Style="MainButton"/>
+						<GridButton ID="CountButton" Size="70,34" Style="MainButton"/>
+					</Stack>
+				</Stack>
+			</Grid>
+		</Image>
+	</Box>
+</Context>
