@@ -35,6 +35,23 @@ s = s.replace(marker, marker + "\n    invoke-static {p0}, Lcom/aspyr/civvi/ModIn
 open(p, "w", encoding="utf-8").write(s)
 PY
 
+# 2b. full screen on tall / notched phones: the original theme forbids drawing into the display cutout
+#     (windowLayoutInDisplayCutoutMode=never -> black bars) and declares no maximum aspect ratio
+sed -i 's|name="android:windowLayoutInDisplayCutoutMode">never<|name="android:windowLayoutInDisplayCutoutMode">shortEdges<|' "$WORK/ap/res/values/styles.xml"
+grep -q 'shortEdges' "$WORK/ap/res/values/styles.xml" || { echo "cutout theme patch failed"; exit 1; }
+python3 - "$WORK/ap/AndroidManifest.xml" <<'PY'
+import sys
+p = sys.argv[1]
+s = open(p, encoding="utf-8").read()
+if "android.max_aspect" not in s:
+    i = s.index("<application ")
+    j = s.index(">", i)
+    s = s[:j] + ' android:resizeableActivity="true"' + s[j:]
+    k = s.index(">", s.index("<application ")) + 1
+    s = s[:k] + '\n        <meta-data android:name="android.max_aspect" android:value="3.5"/>' + s[k:]
+    open(p, "w", encoding="utf-8").write(s)
+PY
+
 # 3. rebuild + sign
 java -jar "$APKTOOL" b -o "$WORK/unsigned.apk" "$WORK/ap" >/dev/null
 if [ ! -f "$KEYSTORE" ]; then
