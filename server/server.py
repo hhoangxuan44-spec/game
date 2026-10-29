@@ -684,9 +684,7 @@ def dispatch(store, path, body):
     with LOCK:
         fn = ROUTES.get(path)
         if fn is None:
-            resp = {"success": True}
-            resp["_unhandled"] = path
-            return resp, True
+            return {"success": True}, True
         try:
             return fn(store, body), False
         except ApiError as e:

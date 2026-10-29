@@ -10,3 +10,7 @@ original/*.apk
 patcher/bin/
 patcher/obj/
 build/debug.keystore
+embedded/bin/
+embedded/obj/
+embedded/tests/bin/
+embedded/tests/obj/

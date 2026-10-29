@@ -14,6 +14,10 @@
 //   VkSdk.Pay                             -> stores callback, feeds onFinish a "pay ok" message
 //   VkSdk.Submit / VkSdk.TryQuit          -> no-op
 //
+// With --embed <MonsuOffline.dll> (see Embed.cs) the offline server is compiled into the game as well:
+//   HttpRequestDispatcher.DispatchRequest -> answered in-process instead of sending a WWW request
+//   NetworkHealthSensor.DoHealthCheck     -> reports "connected" without a request
+//
 // Running the tool on an already patched DLL is detected and refused to modify it again.
 
 using System;
@@ -34,8 +38,11 @@ static class Program
             Console.Error.WriteLine("usage: patcher <in.dll> <out.dll> [server_url]");
             return 2;
         }
-        string url = args.Length > 2 ? args[2] : "http://127.0.0.1:8083/api/";
+        string url = args.Length > 2 && !args[2].StartsWith("--") ? args[2] : "http://127.0.0.1:8083/api/";
         if (!url.EndsWith("/")) url += "/";
+        // --embed <MonsuOffline.dll>: also embed the offline server into the game (no external server needed)
+        string embed = null;
+        for (int a = 0; a < args.Length - 1; a++) if (args[a] == "--embed") embed = args[a + 1];
 
         // Cecil needs UnityEngine.dll / mscorlib.dll etc. next to the input to resolve constants while writing.
         var resolver = new DefaultAssemblyResolver();
@@ -100,6 +107,9 @@ static class Program
         });
         Replace(Method(vk, "Submit"), il => il.Emit(OpCodes.Ret));
         Replace(Method(vk, "TryQuit"), il => il.Emit(OpCodes.Ret));
+
+        if (embed != null)
+            Embed.Run(mod, embed, System.IO.Path.GetDirectoryName(System.IO.Path.GetFullPath(args[0])));
 
         asm.Write(args[1]);
         Console.WriteLine("patched -> " + args[1] + " (server " + url + ")");

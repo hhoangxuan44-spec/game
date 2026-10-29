@@ -170,7 +170,7 @@ def mission_reward(index):
 
 def settings():
     prices = [{"name": n, "price": p, "currency": c} for n, (p, c, _a) in NON_IAP.items()]
-    iap = [{"name": n, "apple": n, "google": n, "ch": n, "price": p} for n, (p, _a) in IAP.items()]
+    iap = [{"name": n, "apple": n, "google": n, "ch": n, "price": "CNY " + p} for n, (p, _a) in IAP.items()]
     purchase_defs = [{"name": n, "amount": a} for n, (_p, _c, a) in NON_IAP.items()]
     purchase_defs += [{"name": n, "amount": a} for n, (_p, a) in IAP.items()]
     rewards = [{"rewardName": n, "rewardType": t, "rewardAmount": a} for n, (t, a) in ACHIEVEMENT_REWARD.items()]
