@@ -22,7 +22,24 @@ python3 "$HERE/patch_mod.py" "$WORK/ap/assets/mods/AdvancedCheatMenu"
 sed -i 's|UI/POPUPS/|UI/Popups/|g' "$WORK/ap/assets/mods/AdvancedCheatMenu/"*.modinfo
 
 # 2. installer class + one call at the top of Civ6Application.onCreate
-cp "$HERE/ModInstaller.smali" "$WORK/ap/smali/com/aspyr/civvi/ModInstaller.smali"
+python3 - "$HERE/ModInstaller.smali" "$HERE/options.conf" "$WORK/ap/smali/com/aspyr/civvi/ModInstaller.smali" <<'PY'
+import sys
+src, conf, dst = sys.argv[1:4]
+smali = open(src, encoding="utf-8").read()
+body = ""
+for line in open(conf, encoding="utf-8"):
+    line = line.strip()
+    if not line or line.startswith("#"):
+        continue
+    key, value = line.split(None, 1)
+    assert key.isalnum() and all(c.isalnum() or c == "." for c in value), line
+    # regex "(?m)^Key [^\\r\\n]*"  ->  "Key value"   (replaceAll)
+    body += ('    const-string v4, "(?m)^%s [^\\\\r\\\\n]*"\n\n    const-string v5, "%s %s"\n\n'
+             '    invoke-virtual {v3, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n'
+             '    move-result-object v3\n\n') % (key, key, value)
+assert "# @OPTION_REPLACEMENTS@" in smali
+open(dst, "w", encoding="utf-8").write(smali.replace("# @OPTION_REPLACEMENTS@\n", body))
+PY
 python3 - "$WORK/ap/smali/com/aspyr/civvi/Civ6Application.smali" <<'PY'
 import sys
 p = sys.argv[1]

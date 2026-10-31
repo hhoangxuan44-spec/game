@@ -31,6 +31,14 @@
     const-string v3, "mods"
 
     invoke-static {v2, v3, v1}, Lcom/aspyr/civvi/ModInstaller;->copyDir(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/io/File;)V
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "Sid_Meiers_Civilization_VI/AppOptions.txt"
+
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/aspyr/civvi/ModInstaller;->patchOptions(Ljava/io/File;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -144,5 +152,71 @@
     goto :dir_loop
 
     :dir_done
+    return-void
+.end method
+
+# Rewrites the values of selected keys in AppOptions.txt (if the game has created it already).
+# Only the value part of "Key value" lines changes, everything else (line endings included) stays as it is.
+.method private static patchOptions(Ljava/io/File;)V
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :end
+
+    invoke-virtual {p0}, Ljava/io/File;->length()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    new-array v1, v0, [B
+
+    new-instance v2, Ljava/io/FileInputStream;
+
+    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-virtual {v2, v1}, Ljava/io/FileInputStream;->read([B)I
+
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+
+    new-instance v3, Ljava/lang/String;
+
+    const-string v4, "UTF-8"
+
+    invoke-direct {v3, v1, v4}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
+
+    move-object v6, v3
+
+# @OPTION_REPLACEMENTS@
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :end
+
+    new-instance v2, Ljava/io/FileOutputStream;
+
+    invoke-direct {v2, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    const-string v4, "UTF-8"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/io/FileOutputStream;->write([B)V
+
+    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
+
+    :end
     return-void
 .end method
