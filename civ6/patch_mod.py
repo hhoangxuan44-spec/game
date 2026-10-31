@@ -69,7 +69,7 @@ def main(mod):
                '\t\t\t\t</Grid>\n')
         edit(xml, "\t\t\t</Stack>\n\t\t</SlideAnim>", row + "\t\t\t</Stack>\n\t\t</SlideAnim>", "BonusBacking4")
 
-    scale_panel(xml, float(os.environ.get("PANEL_SCALE", "1.5")))
+    scale_panel(xml, float(os.environ.get("PANEL_SCALE", "1.0")))
 
     lua = os.path.join(mod, "UI", "Panels", "Cheat_Menu_Panel_Functions.lua")
     # nothing to add there; the button is wired in Cheat_Menu_Panel.lua

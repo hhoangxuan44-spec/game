@@ -31,7 +31,7 @@ RenderHeight 1216
 FullScreen 2
 
 ;UI will be scaled by 1 plus this value, non-integers may cause small artifacts
-UIUpscale 0.300000
+UIUpscale 1.500000
 
 ;Set to 1 to allow the use of software renderers such as Microsoft's WARP
 AllowSWRenderer 0
