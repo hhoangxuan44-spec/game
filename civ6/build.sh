@@ -3,11 +3,13 @@
 # The mod is bundled in assets/mods/ and copied to the game's own Mods folder at every start
 # (Civ6Application.onCreate -> ModInstaller.install), so no file manager / Android/data access is needed.
 #
-# usage: civ6/build.sh <base.apk> <mod-folder> [apktool.jar]
+# usage: [PROFILE=s50promini|zhangwan_mini2] civ6/build.sh <base.apk> <mod-folder> [apktool.jar]
+#   PROFILE picks civ6/profiles/<name>.conf (AppOptions values written at every start); output out/civ6-mod-<name>.apk
 #   needs: JDK (java, keytool, jarsigner), apktool 2.9+ (jar), python3
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 APK="$1"; MOD="$2"; APKTOOL="${3:-${APKTOOL:-apktool.jar}}"
+PROFILE="${PROFILE:-s50promini}"
 WORK="$HERE/work"; OUT="$HERE/out"; KEYSTORE="$HERE/debug.keystore"
 rm -rf "$WORK"; mkdir -p "$WORK" "$OUT"
 
@@ -22,7 +24,7 @@ python3 "$HERE/patch_mod.py" "$WORK/ap/assets/mods/AdvancedCheatMenu"
 sed -i 's|UI/POPUPS/|UI/Popups/|g' "$WORK/ap/assets/mods/AdvancedCheatMenu/"*.modinfo
 
 # 2. installer class + one call at the top of Civ6Application.onCreate
-python3 - "$HERE/ModInstaller.smali" "$HERE/options.conf" "$WORK/ap/smali/com/aspyr/civvi/ModInstaller.smali" <<'PY'
+python3 - "$HERE/ModInstaller.smali" "$HERE/profiles/$PROFILE.conf" "$WORK/ap/smali/com/aspyr/civvi/ModInstaller.smali" <<'PY'
 import sys
 src, conf, dst = sys.argv[1:4]
 smali = open(src, encoding="utf-8").read()
@@ -75,6 +77,6 @@ if [ ! -f "$KEYSTORE" ]; then
   keytool -genkeypair -keystore "$KEYSTORE" -storepass civ6mod -keypass civ6mod -alias civ6 -keyalg RSA -keysize 2048 \
     -validity 10000 -dname "CN=Civ6 Mod" >/dev/null 2>&1
 fi
-cp "$WORK/unsigned.apk" "$OUT/civ6-mod.apk"
-jarsigner -keystore "$KEYSTORE" -storepass civ6mod -keypass civ6mod -sigalg SHA256withRSA -digestalg SHA-256 "$OUT/civ6-mod.apk" civ6 >/dev/null
-echo "built $OUT/civ6-mod.apk"
+cp "$WORK/unsigned.apk" "$OUT/civ6-mod-$PROFILE.apk"
+jarsigner -keystore "$KEYSTORE" -storepass civ6mod -keypass civ6mod -sigalg SHA256withRSA -digestalg SHA-256 "$OUT/civ6-mod-$PROFILE.apk" civ6 >/dev/null
+echo "built $OUT/civ6-mod-$PROFILE.apk"

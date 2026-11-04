@@ -6,7 +6,7 @@
 
 ## 构建
 ```
-civ6/build.sh <原版 base.apk> <模组文件夹> [apktool.jar]
+PROFILE=<设备> civ6/build.sh <原版 base.apk> <模组文件夹> [apktool.jar]
 ```
 需要 JDK、apktool 2.9+、python3。输出 `civ6/out/civ6-mod.apk`。
 
@@ -25,3 +25,8 @@ civ6/build.sh <原版 base.apk> <模组文件夹> [apktool.jar]
 - 重新签名后**不能覆盖安装**。卸载前务必备份 `Android/obb/com.aspyr.civvi/`（两个共约 4GB 的 OBB）和 `Android/data/com.aspyr.civvi/files/`（存档），安装新版后、启动前再放回去。
 - 渠道（ccplay）或游戏有没有签名校验，没有在真机上验证过。
 - 进游戏后在"附加内容/模组"里启用 Advanced Cheat Menu。
+
+## 按设备适配（`profiles/`）
+每台设备一个配置文件，写的是启动时自动改进 `AppOptions.txt` 的值：
+`s50promini`（vivo S50 Pro mini，2640×1216）、`zhangwan_mini2`（掌玩 mini 2，1920×1200）。
+`PROFILE=zhangwan_mini2 civ6/build.sh ...` 输出 `civ6/out/civ6-mod-zhangwan_mini2.apk`。
